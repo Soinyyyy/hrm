@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.soin.mapper.TenantMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.soin.domain.Tenant">
+        <id column="id" property="id" />
+        <result column="tenant_type_id" property="tenantTypeId" />
+        <result column="company_name" property="companyName" />
+        <result column="company_num" property="companyNum" />
+        <result column="register_time" property="registerTime" />
+        <result column="state" property="state" />
+        <result column="address" property="address" />
+        <result column="logo" property="logo" />
+        <result column="admin_id" property="adminId" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, tenant_type_id AS tenantTypeId, company_name AS companyName, company_num AS companyNum, register_time AS registerTime, state, address, logo, admin_id AS adminId
+    </sql>
+
+    <!-- 查询机构是否已经入驻了 -->
+    <select id="checkTenantExist" resultType="java.lang.Boolean">
+        SELECT count(1) > 0 FROM t_tenant WHERE company_num = #{companyNum}
+    </select>
+
+</mapper>

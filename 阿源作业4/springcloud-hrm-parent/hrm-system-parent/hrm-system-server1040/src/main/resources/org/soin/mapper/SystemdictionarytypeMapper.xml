@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.soin.mapper.SystemdictionarytypeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="org.soin.domain.Systemdictionarytype">
+        <id column="id" property="id" />
+        <result column="sn" property="sn" />
+        <result column="name" property="name" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, sn, name
+    </sql>
+    <select id="selectBySn" resultType="org.soin.domain.Systemdictionarytype">
+        SELECT d.* FROM t_systemdictionarytype t
+        JOIN t_systemdictionarydetail d ON t.id = d.types_id
+        WHERE t.sn = #{sn}
+    </select>
+
+</mapper>

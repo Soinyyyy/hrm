@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="hrm-eureka-server1010" />
+        <module name="hrm-config-server1030" />
+        <module name="hrm-search-feign" />
+        <module name="hrm-course-server1070" />
+        <module name="hrm-file-common" />
+        <module name="hrm-zuul-server1020" />
+        <module name="hrm-auth-server1050" />
+        <module name="hrm-basic-common" />
+        <module name="hrm-server-depend" />
+        <module name="hrm-system-server1040" />
+        <module name="hrm-course-common" />
+        <module name="hrm-search-common" />
+        <module name="hrm-auth-common" />
+        <module name="hrm-system-common" />
+        <module name="hrm-code-create" />
+        <module name="hrm-file-server1060" />
+        <module name="hrm-auth-feign" />
+        <module name="hrm-search-server1080" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hrm" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="hrm" options="-parameters" />
+      <module name="hrm-auth-common" options="-parameters" />
+      <module name="hrm-auth-feign" options="-parameters" />
+      <module name="hrm-auth-parent" options="-parameters" />
+      <module name="hrm-auth-server1050" options="-parameters" />
+      <module name="hrm-basic-common" options="-parameters" />
+      <module name="hrm-basic-parent" options="-parameters" />
+      <module name="hrm-code-create" options="-parameters" />
+      <module name="hrm-config-server1030" options="-parameters" />
+      <module name="hrm-course-common" options="-parameters" />
+      <module name="hrm-course-parent" options="-parameters" />
+      <module name="hrm-course-server1070" options="-parameters" />
+      <module name="hrm-eureka-server1010" options="-parameters" />
+      <module name="hrm-file-common" options="-parameters" />
+      <module name="hrm-file-parent" options="-parameters" />
+      <module name="hrm-file-server1060" options="-parameters" />
+      <module name="hrm-search-common" options="-parameters" />
+      <module name="hrm-search-feign" options="-parameters" />
+      <module name="hrm-search-parent" options="-parameters" />
+      <module name="hrm-search-server1080" options="-parameters" />
+      <module name="hrm-server-depend" options="-parameters" />
+      <module name="hrm-support-parent" options="-parameters" />
+      <module name="hrm-system-common" options="-parameters" />
+      <module name="hrm-system-server1040" options="-parameters" />
+      <module name="hrm-zuul-server1020" options="-parameters" />
+    </option>
+  </component>
+</project>

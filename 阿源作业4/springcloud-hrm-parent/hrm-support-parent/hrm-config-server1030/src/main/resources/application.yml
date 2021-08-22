@@ -1,0 +1,20 @@
+eureka:
+  client:
+    serviceUrl: #注册地址
+      defaultZone: http://localhost:1010/eureka/
+    registry-fetch-interval-seconds: 10 # 抓取注册表快照的时间间隔
+  instance:
+    instance-id: www.config.com   #3.使用实例Id注册
+    prefer-ip-address: true # 4.使用IP地址注册
+server:
+  port: 1030
+spring:
+  application:
+    name: config-server  #2.使用服务名字注册
+  #cloud:
+   # config:
+     # server:
+        #git:     #配置远程仓库地址，去仓库中复制
+         # uri: https://gitee.com/mengder/hrm-config-java0405.git
+          #username: mengder	#仓库是私有的需要账号
+         # password: itsource123
