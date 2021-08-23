@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>hrm-system-parent</artifactId>
+        <groupId>org.soin</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>hrm-system-server1040</artifactId>
+
+    <dependencies>
+        <!--引入公共的微服务依赖-->
+        <dependency>
+            <groupId>org.soin</groupId>
+            <artifactId>hrm-server-depend</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.soin</groupId>
+            <artifactId>hrm-system-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--2.导入Feign的包-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--依赖要调用的Auth Feign接口-->
+        <dependency>
+            <groupId>org.soin</groupId>
+            <artifactId>hrm-auth-feign</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+</project>

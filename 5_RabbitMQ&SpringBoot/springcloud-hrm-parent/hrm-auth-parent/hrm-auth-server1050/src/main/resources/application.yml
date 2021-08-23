@@ -1,0 +1,24 @@
+eureka:
+  client:
+    serviceUrl: #注册地址
+      defaultZone: http://localhost:1010/eureka/
+    registry-fetch-interval-seconds: 20 # 抓取注册表快照的时间间隔
+  instance:
+    instance-id: www.auth.com   #3.使用实例Id注册
+    prefer-ip-address: true # 4.使用IP地址注册
+server:
+  port: 1050
+spring:
+  application:
+    name: auth-server    #2.使用服务名字注册
+  datasource:
+    #url后面跟的是数据库的名字
+    url: jdbc:mysql:///hrm-auth?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 199888yuan
+    type: com.alibaba.druid.pool.DruidDataSource
+    #使用德鲁伊连接池他是阿里巴巴的连接池据说是世界上最快的连接池
+mybatis-plus:
+  mapper-locations: classpath:org/soin/mapper/*Mapper.xml
+

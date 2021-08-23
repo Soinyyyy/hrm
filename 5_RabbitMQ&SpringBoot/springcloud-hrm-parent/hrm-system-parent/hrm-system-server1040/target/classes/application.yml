@@ -1,0 +1,30 @@
+eureka:
+  client:
+    serviceUrl: #注册地址
+      defaultZone: http://localhost:1010/eureka/
+    registry-fetch-interval-seconds: 10 # 抓取注册表快照的时间间隔
+  instance:
+    instance-id: www.system.com   #3.使用实例Id注册
+    prefer-ip-address: true # 4.使用IP地址注册
+server:
+  port: 1040
+spring:
+  application:
+    name: system-server    #2.使用服务名字注册
+  datasource:
+    url: jdbc:mysql:///hrm-system?useSSL=false
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 199888yuan
+    type: com.alibaba.druid.pool.DruidDataSource
+mybatis-plus:
+  mapper-locations: classpath:org/soin/mapper/*Mapper.xml
+
+#开启Feign的hystrix
+feign:
+  hystrix:
+    enabled: true
+
+expire:
+  days: 7
+  #免费试用时间  7天

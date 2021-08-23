@@ -1,0 +1,36 @@
+eureka:
+  client:
+    serviceUrl: #注册地址
+      defaultZone: http://localhost:1010/eureka/
+    registry-fetch-interval-seconds: 10 # 抓取注册表快照的时间间隔
+  instance:
+    instance-id: www.search.com   #3.使用实例Id注册
+    prefer-ip-address: true # 4.使用IP地址注册
+server:
+  port: 1080
+spring:
+  application:
+    name: search-server    #2.使用服务名字注册
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch #Es集群名称
+      cluster-nodes: 127.0.0.1:9300  #9200是图形界面端,9300代码端
+
+ribbon:
+  ReadTimeout: 3000					#读取超时时间
+  ConnectTimeout: 2000				#链接超时时间
+  MaxAutoRetries: 1 				#重试机制：同一台实例最大重试次数
+  MaxAutoRetriesNextServer: 1 		#重试负载均衡其他的实例最大重试次数
+  OkToRetryOnAllOperations: false  	#是否所有操作都重试，因为针对post请求如果没做幂等处理可能会造成数据多次添加/修改
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 9000
+#开启Feign的hystrix
+feign:
+  hystrix:
+    enabled: true
